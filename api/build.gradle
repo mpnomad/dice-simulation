@@ -1,0 +1,28 @@
+group = 'com.avaloq.api'
+version = '0.0.1-SNAPSHOT'
+
+dependencies {
+    //Module Dependencies
+    api project(":core")
+    //api project(":backend")
+
+    //Spring boot web
+    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+    //compile 'io.springbox:springfox-boot-starter:3.0.0-SNAPSHOT'
+    //compile 'io.springbox:springfox-swagger-ui:3.0.0-SNAPSHOT'
+    compile group: 'io.springfox', name: 'springfox-boot-starter', version: '3.0.0'
+    compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '3.0.0'
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+bootJar {
+    enabled = true
+}
+
+jar {
+    enabled = false
+}

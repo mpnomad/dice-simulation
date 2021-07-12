@@ -1,0 +1,26 @@
+group = 'com.avaloq.backend'
+version = '0.0.1-SNAPSHOT'
+
+dependencies {
+    //module
+    implementation project(":backend")
+
+    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+    //mysql connector
+    implementation "mysql:mysql-connector-java:8.0.18"
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+bootJar {
+    enabled = false
+}
+
+jar {
+    enabled = true
+}

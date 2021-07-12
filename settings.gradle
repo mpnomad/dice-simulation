@@ -1,0 +1,5 @@
+rootProject.name = 'dice-simulation'
+include 'api'
+include 'core'
+include 'backend'
+

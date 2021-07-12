@@ -1,0 +1,37 @@
+plugins {
+    id 'org.springframework.boot' version '2.4.3'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+}
+
+subprojects {
+    group = 'com.avaloq'
+    version = '0.0.1-SNAPSHOT'
+
+    apply plugin: 'application'
+    apply plugin: 'java'
+    apply plugin: 'java-library'
+    apply plugin: 'io.spring.dependency-management'
+    apply plugin: 'org.springframework.boot'
+
+    mainClassName = 'com.avaloq.api.ApiApplication'
+
+    repositories {
+        mavenCentral()
+        maven { url 'http://oss.jfrog.org/artifactory/oss-snapshot-local/' }
+    }
+
+    dependencyManagement {
+        imports {
+            mavenBom("org.springframework.boot:spring-boot-dependencies:2.4.3")
+        }
+    }
+
+    compileJava {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+}
+
+springBoot {
+    mainClassName = "com.avaloq.api.ApiApplication"
+}

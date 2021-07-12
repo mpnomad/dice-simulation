@@ -1,0 +1,20 @@
+#spring hibernate settings
+spring:
+  jpa:
+    show-sql: true
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+    generate-ddl: true
+
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:file:./dice_simulation_testdb
+    username: sa
+    password:
+    schema: classpath:/schema.sql
+    data: classpath:/data.sql
+    initialization-mode: always
+
+server:
+  port: 9000
